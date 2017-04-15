@@ -49,13 +49,22 @@ package object mail {
 
       val config =
         Source.fromFile("src/main/resources/mail.config").getLines()
-          .map(line => line.split("="))
+          .map(line => { 
+                println(line)
+                line.split("=")
+           })
           .map(array => array(0) -> array(1))
           .toMap
 
       commonsMail.setHostName(config("mail.host"))
+      commonsMail.setSmtpPort(config("mail.smtp.port").toInt)
+//    commonsMail.setSSLOnConnect(true)
+//    commonsMail.setStartTLSEnabled(true)
+//    commonsMail.setTLS(true)
+
+      commonsMail.setDebug(true)
+
       //commonsMail.setAuthentication(config("mail.username"), config("mail.password"))
-      //commonsMail.setStartTLSEnabled(true)
 
       // Can't add these via fluent API because it produces exceptions
       mail.to foreach (commonsMail.addTo(_))
