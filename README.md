@@ -132,4 +132,41 @@ QUIT
 
 ```
 
+using telnet
+----
+
+```bash
+telnet -a exchange.changeme.net 25
+Trying 10.16.92.37...
+Connected to exchange.changeme.net.
+Escape character is '^]'.
+220 M0319P49.changeme.net Microsoft ESMTP MAIL Service ready at Sat, 15 Apr 2017 15:55:58 -0700
+EHLO prayag
+250-M0319P49.changeme.net Hello [172.21.3.9]
+250-SIZE 20971520
+250-PIPELINING
+250-DSN
+250-ENHANCEDSTATUSCODES
+250-AUTH
+250-8BITMIME
+250-BINARYMIME
+250-CHUNKING
+250-XEXCH50
+250 XSHADOW
+MAILL FROM: prayag.upd@changeme.com
+500 5.3.3 Unrecognized command
+MAIL FROM: <prayag.upd@changeme.com>
+250 2.1.0 Sender OK
+RCPT TO: <prayag.upd@changeme.com>
+250 2.1.5 Recipient OK
+DATA
+354 Start mail input; end with <CRLF>.<CRLF>
+This is a test alert from telnet session.
+.
+250 2.6.0 <c655e2c4-036e-480a-a7fa-38456ec8b96d@M0319P49.changeme.net> [InternalId=270320338] Queued mail for delivery
+QUIT
+221 2.0.0 Service closing transmission channel
+Connection closed by foreign host.
+```
+
 - copy pasta of https://gist.github.com/mariussoutier/3436111
