@@ -25,6 +25,7 @@ TODO
 
 ```
 mail.host=exchange.divinen.net
+mail.smtp.port=25
 mail.username=whatever
 mail.password=whatever
 ```
