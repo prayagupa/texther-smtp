@@ -1,10 +1,5 @@
 import scala.io.Source
 
-/**
-  * Created by prayagupd
-  * on 1/9/17.
-  */
-
 package object mail {
 
   implicit def stringToSeq(single: String): Seq[String] = Seq(single)
